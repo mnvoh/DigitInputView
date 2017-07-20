@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DigitInputView_Example' do
+  pod 'DigitInputView', :path => '../'
+
+  target 'DigitInputView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
