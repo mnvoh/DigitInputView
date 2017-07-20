@@ -1,0 +1,22 @@
+{
+  "name": "DigitInputView",
+  "version": "0.1.0",
+  "summary": "A short description of DigitInputView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mnvoh/DigitInputView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mnvoh": "mnvoh90@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/mnvoh/DigitInputView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DigitInputView/Classes/**/*"
+}

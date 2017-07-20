@@ -1,0 +1,16 @@
+PODS:
+  - DigitInputView (0.1.0)
+
+DEPENDENCIES:
+  - DigitInputView (from `../`)
+
+EXTERNAL SOURCES:
+  DigitInputView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DigitInputView: 55dff79eb83b8635d03c12583d688c52916cb0b6
+
+PODFILE CHECKSUM: 82503a5e00295b2b3e249ba989aff0f786ac6bae
+
+COCOAPODS: 1.2.1
