@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		02A80956765BE375378C258F5A04FBE6 /* Pods-DigitInputView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5F3C6F0C96DD03854A47FF0141FB5 /* Pods-DigitInputView_Example-dummy.m */; };
 		289B0FB28975B7BE106F3F018B893155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		59EDB312A76C686F54F7FFFCD6309361 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299A1B55E6A64E3DE26A159B3C66CB5 /* ReplaceMe.swift */; };
+		47AB8EBAD7638939984FADE00715AB47 /* DigitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D189684FCA26D035DCB6679801B319 /* DigitInputView.swift */; };
+		675ED43367AE4F9BC39426E8148E769A /* DigitInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB527DF6FF9E9F6AC7F15723DF2693E0 /* DigitInputView-dummy.m */; };
 		85BDA06DD2C25467F5E0B01F014DDD94 /* Pods-DigitInputView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF5AF458E75A3B77F29B783EEB783B04 /* Pods-DigitInputView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96FFDF296BC1B9DE9098C3D96042A430 /* DigitInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DC5813D59E0C9BB9DD8711AE5C9E37 /* DigitInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3EA71D129121476F78589A49EBBE86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B8741B815F8109076F25DC0BF6DF6D5C /* Pods-DigitInputView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E41860EEAF10119C90DA9EC3C5A76017 /* Pods-DigitInputView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA3BB1A7B7870A6472EDA167BB0E44A9 /* DigitInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB527DF6FF9E9F6AC7F15723DF2693E0 /* DigitInputView-dummy.m */; };
 		BD98E7431E257B4D42EE702BFE12938A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		F199B473428D789AEC4718EB3542FEBA /* Pods-DigitInputView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 850A1EC89CD5F3B67CFCB76A520E1425 /* Pods-DigitInputView_Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -44,12 +44,12 @@
 		6577181AB1179A693E52BB60F1355FCA /* DigitInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DigitInputView.framework; path = DigitInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		67392F87764A0C1F71A750A3FBA9D771 /* Pods-DigitInputView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitInputView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7299A1B55E6A64E3DE26A159B3C66CB5 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		7BD5F3C6F0C96DD03854A47FF0141FB5 /* Pods-DigitInputView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DigitInputView_Example-dummy.m"; sourceTree = "<group>"; };
 		7BE1CE20B91189CE04AADABA2C71561B /* Pods-DigitInputView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitInputView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		850A1EC89CD5F3B67CFCB76A520E1425 /* Pods-DigitInputView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DigitInputView_Tests-dummy.m"; sourceTree = "<group>"; };
 		89AB36CBCFA9EC42FD3EE5A7577E1AED /* Pods-DigitInputView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DigitInputView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8F4F390DCD04AF57540A8B99C0B73BBA /* Pods-DigitInputView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DigitInputView_Tests-resources.sh"; sourceTree = "<group>"; };
+		90D189684FCA26D035DCB6679801B319 /* DigitInputView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DigitInputView.swift; sourceTree = "<group>"; };
 		9311CB6625A9E4BAE57FADA94F9A357B /* Pods-DigitInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A77F2CC76F9FCD7B47BCA0424E4AEF8C /* Pods-DigitInputView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DigitInputView_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		49C2756BB803BB1D9B41C0215D014B07 /* DigitInputView */ = {
 			isa = PBXGroup;
 			children = (
-				AC387A316B21196F7A016F17CCC824D2 /* Classes */,
+				C746AE9247EA66AFB5504ECA66F75DC8 /* Classes */,
 			);
 			name = DigitInputView;
 			path = DigitInputView;
@@ -157,15 +157,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		AC387A316B21196F7A016F17CCC824D2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				7299A1B55E6A64E3DE26A159B3C66CB5 /* ReplaceMe.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		B1476FE82B7F600E6B4356925BE08509 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +171,15 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C746AE9247EA66AFB5504ECA66F75DC8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				90D189684FCA26D035DCB6679801B319 /* DigitInputView.swift */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		C935935C64C3A89385CC9F6264B3C27B /* Support Files */ = {
@@ -258,7 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5777810B25F914B4164E543652584B79 /* Build configuration list for PBXNativeTarget "DigitInputView" */;
 			buildPhases = (
-				C5B8D740401AF5B1DE88E21460D1EB0C /* Sources */,
+				DCDE18EB5E5B01E545B82BEB015C31F4 /* Sources */,
 				2B9DFB006A22FE051D555F5225922034 /* Frameworks */,
 				ADA65758728652AF6A77EB5BC22F8012 /* Headers */,
 			);
@@ -351,12 +351,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5B8D740401AF5B1DE88E21460D1EB0C /* Sources */ = {
+		DCDE18EB5E5B01E545B82BEB015C31F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3BB1A7B7870A6472EDA167BB0E44A9 /* DigitInputView-dummy.m in Sources */,
-				59EDB312A76C686F54F7FFFCD6309361 /* ReplaceMe.swift in Sources */,
+				675ED43367AE4F9BC39426E8148E769A /* DigitInputView-dummy.m in Sources */,
+				47AB8EBAD7638939984FADE00715AB47 /* DigitInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,9 +372,43 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		148D98B10DDF98D0933C9DC0B3AD3838 /* Debug */ = {
+		1DC1AB861D5EA2DA76899C669E771AF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9311CB6625A9E4BAE57FADA94F9A357B /* Pods-DigitInputView_Example.debug.xcconfig */;
+			baseConfigurationReference = 0CACAEFEC29CEC93DE6EA7B36F451565 /* DigitInputView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DigitInputView/DigitInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DigitInputView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DigitInputView/DigitInputView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DigitInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		425A2E92DA0D09D25793F1C5D24E943B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CACAEFEC29CEC93DE6EA7B36F451565 /* DigitInputView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -388,18 +422,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/DigitInputView/DigitInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DigitInputView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Example/Pods-DigitInputView_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/DigitInputView/DigitInputView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DigitInputView_Example;
+				PRODUCT_NAME = DigitInputView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -411,7 +441,7 @@
 			};
 			name = Debug;
 		};
-		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -451,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -459,9 +489,9 @@
 			};
 			name = Debug;
 		};
-		40528A69FF923F040679DA9464AF603C /* Release */ = {
+		A7EF6159CA759E02A44146DA8C3931B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CACAEFEC29CEC93DE6EA7B36F451565 /* DigitInputView.xcconfig */;
+			baseConfigurationReference = EC0250F389CCEED590C198FBC4927F33 /* Pods-DigitInputView_Example.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -475,14 +505,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DigitInputView/DigitInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DigitInputView/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DigitInputView/DigitInputView.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Example/Pods-DigitInputView_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DigitInputView;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DigitInputView_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -493,9 +527,9 @@
 			};
 			name = Release;
 		};
-		44B64720801968F5B2B33804BCB5069B /* Debug */ = {
+		A8C110D992C9C07DE5B8EF374441A24D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CACAEFEC29CEC93DE6EA7B36F451565 /* DigitInputView.xcconfig */;
+			baseConfigurationReference = 9311CB6625A9E4BAE57FADA94F9A357B /* Pods-DigitInputView_Example.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -509,14 +543,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DigitInputView/DigitInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DigitInputView/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DigitInputView/DigitInputView.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Example/Pods-DigitInputView_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DigitInputView;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DigitInputView_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -528,43 +566,7 @@
 			};
 			name = Debug;
 		};
-		4B3332FEDC4646D5752752A97549D91A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D4F452E13ED9381B2CF9C58C8977CC7 /* Pods-DigitInputView_Tests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Tests/Pods-DigitInputView_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DigitInputView_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -600,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -608,45 +610,43 @@
 			};
 			name = Release;
 		};
-		87921F16B45A36A8ECF4F18CE8D60280 /* Release */ = {
+		D7917F95BF4C47CDD6EFDFD38348DDC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC0250F389CCEED590C198FBC4927F33 /* Pods-DigitInputView_Example.release.xcconfig */;
+			baseConfigurationReference = 1D4F452E13ED9381B2CF9C58C8977CC7 /* Pods-DigitInputView_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Example/Pods-DigitInputView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Tests/Pods-DigitInputView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DigitInputView_Example;
+				PRODUCT_NAME = Pods_DigitInputView_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		8BB8F1D4D9D5D8BBE48F8127D0F2F293 /* Release */ = {
+		DA3B03E37E472F3C2322D5C9B83669CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06000A40FABF113AEC64DC2AA6FA528C /* Pods-DigitInputView_Tests.release.xcconfig */;
 			buildSettings = {
@@ -664,7 +664,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-DigitInputView_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DigitInputView_Tests/Pods-DigitInputView_Tests.modulemap";
@@ -688,8 +688,8 @@
 		29FD3AA4005C091D36DB42D8758EAFE4 /* Build configuration list for PBXNativeTarget "Pods-DigitInputView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				148D98B10DDF98D0933C9DC0B3AD3838 /* Debug */,
-				87921F16B45A36A8ECF4F18CE8D60280 /* Release */,
+				A8C110D992C9C07DE5B8EF374441A24D /* Debug */,
+				A7EF6159CA759E02A44146DA8C3931B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -697,8 +697,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
-				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -706,8 +706,8 @@
 		5777810B25F914B4164E543652584B79 /* Build configuration list for PBXNativeTarget "DigitInputView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				44B64720801968F5B2B33804BCB5069B /* Debug */,
-				40528A69FF923F040679DA9464AF603C /* Release */,
+				425A2E92DA0D09D25793F1C5D24E943B /* Debug */,
+				1DC1AB861D5EA2DA76899C669E771AF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -715,8 +715,8 @@
 		ACB4C20625FAA92C883D8ED7261BC1F7 /* Build configuration list for PBXNativeTarget "Pods-DigitInputView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B3332FEDC4646D5752752A97549D91A /* Debug */,
-				8BB8F1D4D9D5D8BBE48F8127D0F2F293 /* Release */,
+				D7917F95BF4C47CDD6EFDFD38348DDC9 /* Debug */,
+				DA3B03E37E472F3C2322D5C9B83669CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

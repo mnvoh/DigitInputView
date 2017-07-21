@@ -15,7 +15,7 @@ an elegant way, ex: Confirmation code input.
   s.source           = { :git => 'https://github.com/mnvoh/DigitInputView.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/mnvoh'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'DigitInputView/Classes/**/*'
 end

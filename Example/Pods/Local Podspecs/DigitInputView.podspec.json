@@ -1,8 +1,8 @@
 {
   "name": "DigitInputView",
   "version": "0.1.0",
-  "summary": "A short description of DigitInputView.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Character input field with separated underline.",
+  "description": "This component will let you propmpt for a limited number of characters in\nan elegant way, ex: Confirmation code input.",
   "homepage": "https://github.com/mnvoh/DigitInputView",
   "license": {
     "type": "MIT",
@@ -15,8 +15,9 @@
     "git": "https://github.com/mnvoh/DigitInputView.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/mnvoh",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "DigitInputView/Classes/**/*"
 }
