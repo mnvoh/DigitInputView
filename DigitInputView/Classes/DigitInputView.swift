@@ -260,7 +260,12 @@ open class DigitInputView: UIView {
         
         for (index, item) in text.characters.enumerated() {
             if labels.count > index {
-                labels[index].text = String(item)
+                if index == text.characters.count - 1 {
+                    changeText(of: labels[index], newText: String(item))
+                }
+                else {
+                    labels[index].text = String(item)
+                }
             }
         }
         
@@ -283,6 +288,21 @@ open class DigitInputView: UIView {
                 }
             }
         }
+        
+    }
+    
+    /// Changes the text of a UILabel with animation
+    ///
+    /// - parameter label: The label to change text of
+    /// - parameter newText: The new string for the label
+    private func changeText(of label: UILabel, newText: String) {
+        
+        UIView.transition(with: label,
+                          duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            label.text = newText
+        }, completion: nil)
         
     }
     
