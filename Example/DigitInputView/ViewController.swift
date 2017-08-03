@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         
         digitInput.numberOfDigits = 6
         digitInput.bottomBorderColor = .purple
+        digitInput.nextDigitBottomBorderColor = .red
         digitInput.textColor = .purple
         digitInput.acceptableCharacters = "0123456789"
         digitInput.keyboardType = .decimalPad
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
         // Let editing end when the view is tapped
         let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing(_:)))
         view.addGestureRecognizer(tap)
+        
+        _ = digitInput.becomeFirstResponder()
     }
     
     @objc func endEditing(_ sender: UITapGestureRecognizer) {

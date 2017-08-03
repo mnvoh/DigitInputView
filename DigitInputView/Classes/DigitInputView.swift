@@ -38,7 +38,18 @@ open class DigitInputView: UIView {
     /**
     The color of the line under each digit
     */
-    open var bottomBorderColor = UIColor.gray {
+    open var bottomBorderColor = UIColor.lightGray {
+        
+        didSet {
+            setup()
+        }
+        
+    }
+    
+    /**
+     The color of the line under next digit
+     */
+    open var nextDigitBottomBorderColor = UIColor.gray {
         
         didSet {
             setup()
@@ -203,15 +214,16 @@ open class DigitInputView: UIView {
         }
         labels.removeAll()
         
-        for _ in 0..<numberOfDigits {
+        for i in 0..<numberOfDigits {
             let label = UILabel()
             label.textAlignment = .center
             label.isUserInteractionEnabled = false
             label.textColor = textColor
             
             let border = UIView()
-            border.backgroundColor = bottomBorderColor
+            border.backgroundColor = i == 0 ? nextDigitBottomBorderColor : bottomBorderColor
             border.translatesAutoresizingMaskIntoConstraints = false
+            border.tag = 666
             
             label.addSubview(border)
             
@@ -249,6 +261,26 @@ open class DigitInputView: UIView {
         for (index, item) in text.characters.enumerated() {
             if labels.count > index {
                 labels[index].text = String(item)
+            }
+        }
+        
+        // set all the bottom borders color to default
+        for label in labels {
+            for subview in label.subviews {
+                subview.backgroundColor = bottomBorderColor
+                break
+            }
+        }
+        
+        let nextIndex = text.characters.count + 1
+        if labels.count > 0, nextIndex < labels.count + 1 {
+            // set the next digit bottom border color
+            let label = labels[nextIndex - 1]
+            for subview in label.subviews {
+                if subview.tag == 666 {
+                    subview.backgroundColor = nextDigitBottomBorderColor
+                    break
+                }
             }
         }
         
