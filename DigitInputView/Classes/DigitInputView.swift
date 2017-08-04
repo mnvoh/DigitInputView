@@ -102,9 +102,11 @@ open class DigitInputView: UIView {
     }
     
     fileprivate var labels = [UILabel]()
+    fileprivate var underlines = [UIView]()
     fileprivate var textField: UITextField?
     fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
     
+    fileprivate var underlineHeight: CGFloat = 4
     fileprivate var spacing: CGFloat = 8
     
     override open var canBecomeFirstResponder: Bool {
@@ -174,6 +176,8 @@ open class DigitInputView: UIView {
             let x = extraSpace / 2 + (characterWidth + spacing) * CGFloat(index)
             label.frame = CGRect(x: x, y: y, width: characterWidth, height: characterHeight)
             
+            underlines[index].frame = CGRect(x: x, y: frame.height - underlineHeight, width: characterWidth, height: underlineHeight)
+            
             if let font = font {
                 label.font = font.withSize(fontSize)
             }
@@ -214,26 +218,24 @@ open class DigitInputView: UIView {
         }
         labels.removeAll()
         
+        for underline in underlines {
+            underline.removeFromSuperview()
+        }
+        underlines.removeAll()
+        
         for i in 0..<numberOfDigits {
             let label = UILabel()
             label.textAlignment = .center
             label.isUserInteractionEnabled = false
             label.textColor = textColor
             
-            let border = UIView()
-            border.backgroundColor = i == 0 ? nextDigitBottomBorderColor : bottomBorderColor
-            border.translatesAutoresizingMaskIntoConstraints = false
-            border.tag = 666
-            
-            label.addSubview(border)
-            
-            border.leftAnchor.constraint(equalTo: label.leftAnchor).isActive = true
-            border.bottomAnchor.constraint(equalTo: label.bottomAnchor).isActive = true
-            border.rightAnchor.constraint(equalTo: label.rightAnchor).isActive = true
-            border.heightAnchor.constraint(equalToConstant: 2).isActive = true
+            let underline = UIView()
+            underline.backgroundColor = i == 0 ? nextDigitBottomBorderColor : bottomBorderColor
             
             addSubview(label)
+            addSubview(underline)
             labels.append(label)
+            underlines.append(underline)
         }
         
     }
@@ -270,23 +272,14 @@ open class DigitInputView: UIView {
         }
         
         // set all the bottom borders color to default
-        for label in labels {
-            for subview in label.subviews {
-                subview.backgroundColor = bottomBorderColor
-                break
-            }
+        for underline in underlines {
+            underline.backgroundColor = bottomBorderColor
         }
         
         let nextIndex = text.characters.count + 1
         if labels.count > 0, nextIndex < labels.count + 1 {
             // set the next digit bottom border color
-            let label = labels[nextIndex - 1]
-            for subview in label.subviews {
-                if subview.tag == 666 {
-                    subview.backgroundColor = nextDigitBottomBorderColor
-                    break
-                }
-            }
+            underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
         }
         
     }
