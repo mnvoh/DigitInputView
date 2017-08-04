@@ -22,6 +22,10 @@
 
 import UIKit
 
+public enum DigitInputViewAnimationType: Int {
+    case none, dissolve, spring
+}
+
 open class DigitInputView: UIView {
     
     /**
@@ -83,6 +87,9 @@ open class DigitInputView: UIView {
         }
         
     }
+    
+    /// The animatino to use to show new digits
+    open var animationType: DigitInputViewAnimationType = .spring
     
     /**
     The font of the digits. Although font size will be calculated automatically.
@@ -252,7 +259,7 @@ open class DigitInputView: UIView {
     /**
      Called when the text changes so that the labels get updated
     */
-    fileprivate func didChange() {
+    fileprivate func didChange(_ backspaced: Bool = false) {
         
         guard let textField = textField, let text = textField.text else { return }
         
@@ -262,12 +269,8 @@ open class DigitInputView: UIView {
         
         for (index, item) in text.characters.enumerated() {
             if labels.count > index {
-                if index == text.characters.count - 1 {
-                    changeText(of: labels[index], newText: String(item))
-                }
-                else {
-                    labels[index].text = String(item)
-                }
+                let animate = index == text.characters.count - 1 && !backspaced
+                changeText(of: labels[index], newText: String(item), animate)
             }
         }
         
@@ -288,15 +291,29 @@ open class DigitInputView: UIView {
     ///
     /// - parameter label: The label to change text of
     /// - parameter newText: The new string for the label
-    private func changeText(of label: UILabel, newText: String) {
+    private func changeText(of label: UILabel, newText: String, _ animated: Bool = false) {
         
-        UIView.transition(with: label,
-                          duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: {
-                            label.text = newText
-        }, completion: nil)
+        if !animated || animationType == .none {
+            label.text = newText
+            return
+        }
         
+        if animationType == .spring {
+            label.frame.origin.y = frame.height
+            label.text = newText
+            
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: { 
+                label.frame.origin.y = self.frame.height - label.frame.height
+            }, completion: nil)
+        }
+        else if animationType == .dissolve {
+            UIView.transition(with: label,
+                              duration: 0.4,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                label.text = newText
+            }, completion: nil)
+        }
     }
     
 }
@@ -311,7 +328,7 @@ extension DigitInputView: UITextFieldDelegate {
         let isBackSpace = strcmp(char, "\\b")
         if isBackSpace == -92, let text = textField.text {
             textField.text = text.substring(to: text.index(text.endIndex, offsetBy: -1))
-            didChange()
+            didChange(true)
             return false
         }
         
