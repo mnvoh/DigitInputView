@@ -26,6 +26,10 @@ public enum DigitInputViewAnimationType: Int {
     case none, dissolve, spring
 }
 
+public protocol DigitInputViewDelegate {
+    func digitsDidChange(digitInputView: DigitInputView)
+}
+
 open class DigitInputView: UIView {
     
     /**
@@ -107,6 +111,8 @@ open class DigitInputView: UIView {
         }
         
     }
+
+    weak var delegate: DigitInputViewDelegate?
     
     fileprivate var labels = [UILabel]()
     fileprivate var underlines = [UIView]()
@@ -284,7 +290,8 @@ open class DigitInputView: UIView {
             // set the next digit bottom border color
             underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
         }
-        
+
+        delegate?.digitsDidChange(digitInputView: self)
     }
     
     /// Changes the text of a UILabel with animation
