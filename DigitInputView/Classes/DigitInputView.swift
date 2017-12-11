@@ -112,7 +112,7 @@ open class DigitInputView: UIView {
         
     }
 
-    weak var delegate: DigitInputViewDelegate?
+    open weak var delegate: DigitInputViewDelegate?
     
     fileprivate var labels = [UILabel]()
     fileprivate var underlines = [UIView]()
