@@ -26,7 +26,7 @@ public enum DigitInputViewAnimationType: Int {
     case none, dissolve, spring
 }
 
-public protocol DigitInputViewDelegate {
+public protocol DigitInputViewDelegate: class {
     func digitsDidChange(digitInputView: DigitInputView)
 }
 
