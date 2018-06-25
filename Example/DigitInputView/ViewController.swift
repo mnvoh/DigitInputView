@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         digitInput.textColor = .purple
         digitInput.acceptableCharacters = "0123456789"
         digitInput.keyboardType = .decimalPad
-        digitInput.font = UIFont.monospacedDigitSystemFont(ofSize: 10, weight: 1)
+        digitInput.font = UIFont.monospacedDigitSystemFont(ofSize: 10, weight: UIFont.Weight(rawValue: 1))
         digitInput.animationType = .spring
         
         // if you wanna use layout constraints
