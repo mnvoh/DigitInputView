@@ -273,9 +273,9 @@ open class DigitInputView: UIView {
             item.text = ""
         }
         
-        for (index, item) in text.characters.enumerated() {
+        for (index, item) in text.enumerated() {
             if labels.count > index {
-                let animate = index == text.characters.count - 1 && !backspaced
+                let animate = index == text.count - 1 && !backspaced
                 changeText(of: labels[index], newText: String(item), animate)
             }
         }
@@ -285,7 +285,7 @@ open class DigitInputView: UIView {
             underline.backgroundColor = bottomBorderColor
         }
         
-        let nextIndex = text.characters.count + 1
+        let nextIndex = text.count + 1
         if labels.count > 0, nextIndex < labels.count + 1 {
             // set the next digit bottom border color
             underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
@@ -333,13 +333,13 @@ extension DigitInputView: UITextFieldDelegate {
         
         let char = string.cString(using: .utf8)
         let isBackSpace = strcmp(char, "\\b")
-        if isBackSpace == -92, let text = textField.text {
-            textField.text = text.substring(to: text.index(text.endIndex, offsetBy: -1))
+        if isBackSpace == -92 {
+            textField.text!.removeLast()
             didChange(true)
             return false
         }
         
-        if textField.text?.characters.count ?? 0 >= numberOfDigits {
+        if textField.text?.count ?? 0 >= numberOfDigits {
             return false
         }
         
