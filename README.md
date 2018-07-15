@@ -33,6 +33,7 @@ digitInput.acceptableCharacters = "0123456789"
 digitInput.keyboardType = .decimalPad
 digitInput.font = UIFont.monospacedDigitSystemFont(ofSize: 10, weight: 1)
 digitInput.animationType = .spring
+digitInput.keyboardAppearance = .dark
 ```
 
 ## Options
@@ -144,6 +145,18 @@ The font to be used with labels.
 Type: `UIFont?`
 
 Default: `nil` (Default System Font)
+
+### keyboardAppearance
+
+Option to choose the keyboard's appearance. Possible values are:
+
+`default`: This value is mapped to `light`
+
+`dark`: Choose a dark keyboard
+
+`light`: Choose a light keyboard
+
+`alert`: An appearance appropriate for alert dialogs
 
 
 
