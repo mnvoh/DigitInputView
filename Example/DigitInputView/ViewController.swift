@@ -43,7 +43,7 @@ class ViewController: UIViewController, DigitInputViewDelegate {
         _ = digitInput.becomeFirstResponder()
     }
     
-    func digitInputView(_ digitInputView: DigitInputView, didFinishWithCode code: String) {
+    func endDigitInputView() {
         _ = digitInput.resignFirstResponder()
         print(digitInput.text)
     }

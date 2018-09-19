@@ -299,7 +299,7 @@ open class DigitInputView: UIView {
             underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
         }
         else {
-            delegate?.digitInputView(self, didFinishWithCode: text)
+            delegate?.endDigitInputView()
         }
         
     }
@@ -371,5 +371,5 @@ extension DigitInputView: UITextFieldDelegate {
 }
 
 public protocol DigitInputViewDelegate {
-    func digitInputView(_ digitInputView: DigitInputView, didFinishWithCode code: String)
+    func endDigitInputView()
 }
