@@ -43,9 +43,13 @@ class ViewController: UIViewController, DigitInputViewDelegate {
         _ = digitInput.becomeFirstResponder()
     }
     
-    func endDigitInputView() {
+    func digitsDidChange(digitInputView: DigitInputView) {
+        print("Change: " + digitInput.text)
+    }
+    
+    func digitsDidFinish(digitInputView: DigitInputView) {
         _ = digitInput.resignFirstResponder()
-        print(digitInput.text)
+        print("Finish: " + digitInput.text)
     }
 }
 
