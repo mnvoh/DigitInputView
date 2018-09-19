@@ -9,7 +9,7 @@
 import UIKit
 import DigitInputView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DigitInputViewDelegate {
 
     var digitInput: DigitInputView!
     
@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         digitInput.animationType = .spring
         digitInput.keyboardAppearance = .dark
         
+        digitInput.delegate = self
+        
         // if you wanna use layout constraints
         digitInput.translatesAutoresizingMaskIntoConstraints = false
         
@@ -38,17 +40,16 @@ class ViewController: UIViewController {
         digitInput.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32).isActive = true
         digitInput.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
-        // Let editing end when the view is tapped
-        let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing(_:)))
-        view.addGestureRecognizer(tap)
-        
         _ = digitInput.becomeFirstResponder()
     }
     
-    @objc func endEditing(_ sender: UITapGestureRecognizer) {
-        _ = digitInput.resignFirstResponder()
-        print(digitInput.text)
+    func digitsDidChange(digitInputView: DigitInputView) {
+        print("Change: " + digitInput.text)
     }
-
+    
+    func digitsDidFinish(digitInputView: DigitInputView) {
+        _ = digitInput.resignFirstResponder()
+        print("Finish: " + digitInput.text)
+    }
 }
 

@@ -28,6 +28,7 @@ public enum DigitInputViewAnimationType: Int {
 
 public protocol DigitInputViewDelegate: class {
     func digitsDidChange(digitInputView: DigitInputView)
+    func digitsDidFinish(digitInputView: DigitInputView)
 }
 
 open class DigitInputView: UIView {
@@ -122,7 +123,7 @@ open class DigitInputView: UIView {
         }
         
     }
-
+    
     open weak var delegate: DigitInputViewDelegate?
     
     fileprivate var labels = [UILabel]()
@@ -302,7 +303,9 @@ open class DigitInputView: UIView {
             // set the next digit bottom border color
             underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
         }
-
+        else {
+            delegate?.digitsDidFinish(digitInputView: self)
+        }
         delegate?.digitsDidChange(digitInputView: self)
     }
     
@@ -370,5 +373,4 @@ extension DigitInputView: UITextFieldDelegate {
         return false
         
     }
-    
 }
