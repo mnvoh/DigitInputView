@@ -33,8 +33,6 @@ public protocol DigitInputViewDelegate: class {
 
 open class DigitInputView: UIView {
     
-    open weak var delegate: DigitInputViewDelegate?
-    
     /**
     The number of digits to show, which will be the maximum length of the final string
     */
@@ -125,6 +123,8 @@ open class DigitInputView: UIView {
         }
         
     }
+    
+    open weak var delegate: DigitInputViewDelegate?
     
     fileprivate var labels = [UILabel]()
     fileprivate var underlines = [UIView]()
@@ -349,7 +349,7 @@ extension DigitInputView: UITextFieldDelegate {
         let char = string.cString(using: .utf8)
         let isBackSpace = strcmp(char, "\\b")
         if isBackSpace == -92 {
-            textField.text?.removeLast()
+            textField.text!.removeLast()
             didChange(true)
             return false
         }
