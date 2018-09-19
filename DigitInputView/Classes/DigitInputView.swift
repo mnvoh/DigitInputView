@@ -90,6 +90,17 @@ open class DigitInputView: UIView {
         
     }
     
+    /**
+     Keyboard appearance type. `default` or `light`, `dark` and `alert`.
+    */
+    open var keyboardAppearance: UIKeyboardAppearance = .default {
+        
+        didSet {
+            setup()
+        }
+        
+    }
+    
     /// The animatino to use to show new digits
     open var animationType: DigitInputViewAnimationType = .spring
     
@@ -218,6 +229,7 @@ open class DigitInputView: UIView {
         }
         
         textField?.keyboardType = keyboardType
+        textField?.keyboardAppearance = keyboardAppearance
         
         // Since this function isn't called frequently, we just remove everything
         // and recreate them. Don't need to optimize it.
