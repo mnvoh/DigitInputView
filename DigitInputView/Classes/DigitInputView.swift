@@ -104,6 +104,18 @@ open class DigitInputView: UIView {
         
     }
     
+    /**
+     UITextField text conent type. Enables and disables one time code.
+     */
+    open var isOneTimeCode: Bool = false {
+        
+        didSet {
+            setup()
+        }
+        
+    }
+    
+    
     /// The animatino to use to show new digits
     open var animationType: DigitInputViewAnimationType = .spring
     
@@ -235,6 +247,19 @@ open class DigitInputView: UIView {
         
         textField?.keyboardType = keyboardType
         textField?.keyboardAppearance = keyboardAppearance
+        
+        // Enabling/Disabling one time code
+        // .oneTimeCode content type available on iOS 12 and above devices
+        // One time code
+       
+        if isOneTimeCode {
+            if #available(iOS 12.0, *) {
+                textField?.textContentType = .oneTimeCode
+            }
+        }
+        else{
+            textField?.textContentType = nil
+        }
         
         // Since this function isn't called frequently, we just remove everything
         // and recreate them. Don't need to optimize it.
