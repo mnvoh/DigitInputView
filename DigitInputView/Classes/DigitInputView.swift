@@ -252,26 +252,17 @@ open class DigitInputView: UIView {
         // .oneTimeCode content type available on iOS 12 and above devices
         // One time code
        
-        if isOneTimeCode {
-            if #available(iOS 12.0, *) {
-                textField?.textContentType = .oneTimeCode
-            }
-        }
-        else{
-            textField?.textContentType = nil
+        if #available(iOS 12.0, *) {
+            textField?.textContentType = isOneTimeCode ? .oneTimeCode : nil
         }
         
         // Since this function isn't called frequently, we just remove everything
         // and recreate them. Don't need to optimize it.
         
-        for label in labels {
-            label.removeFromSuperview()
-        }
+        labels.forEach({$0.removeFromSuperview()})
         labels.removeAll()
         
-        for underline in underlines {
-            underline.removeFromSuperview()
-        }
+        underlines.forEach({$0.removeFromSuperview()})
         underlines.removeAll()
         
         for i in 0..<numberOfDigits {
@@ -288,7 +279,6 @@ open class DigitInputView: UIView {
             labels.append(label)
             underlines.append(underline)
         }
-        
     }
     
     /**
