@@ -41,6 +41,26 @@ class ViewController: UIViewController, DigitInputViewDelegate {
         digitInput.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
         _ = digitInput.becomeFirstResponder()
+
+        let resetButton = UIButton()
+        resetButton.setTitle("Reset input", for: .normal)
+        resetButton.setTitleColor(UIColor.black, for: .normal)
+        resetButton.titleLabel?.font = UIFont.monospacedDigitSystemFont(ofSize: 14, weight: UIFont.Weight(rawValue: 1))
+        resetButton.addTarget(self, action: #selector(resetDigitInput(_:)), for: .touchUpInside)
+
+        resetButton.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(resetButton)
+
+        resetButton.topAnchor.constraint(equalTo: digitInput.bottomAnchor, constant: 32).isActive = true
+        resetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        resetButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+    }
+
+    @objc func resetDigitInput(_ sender: UIButton) {
+        let _ = digitInput.resetDigitInput()
+        print("Reset.")
     }
     
     func digitsDidChange(digitInputView: DigitInputView) {
