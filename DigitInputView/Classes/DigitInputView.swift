@@ -31,6 +31,11 @@ public protocol DigitInputViewDelegate: class {
     func digitsDidFinish(digitInputView: DigitInputView)
 }
 
+public extension DigitInputViewDelegate {
+    func digitsDidChange(digitInputView: DigitInputView) {}
+    func digitsDidFinish(digitInputView: DigitInputView) {}
+}
+
 open class DigitInputView: UIView {
     
     /**
@@ -59,6 +64,28 @@ open class DigitInputView: UIView {
      The color of the line under next digit
      */
     open var nextDigitBottomBorderColor = UIColor.gray {
+        
+        didSet {
+            setup()
+        }
+        
+    }
+    
+    /**
+    The color of the border around each digit
+    */
+    open var digitBorderColor = UIColor.lightGray {
+        
+        didSet {
+            setup()
+        }
+        
+    }
+    
+    /**
+     The color of the border around each digit
+     */
+    open var nextDigitBorderColor = UIColor.gray {
         
         didSet {
             setup()
@@ -115,6 +142,17 @@ open class DigitInputView: UIView {
         
     }
     
+    /**
+    shows a border around each digit.
+    */
+    open var showsDigitBorder: Bool = false {
+        
+        didSet {
+            setup()
+        }
+        
+    }
+    
     
     /// The animatino to use to show new digits
     open var animationType: DigitInputViewAnimationType = .spring
@@ -134,6 +172,11 @@ open class DigitInputView: UIView {
             return textField.text ?? ""
         }
         
+        set {
+            self.textField?.text = newValue
+            self.didChange()
+        }
+        
     }
     
     open weak var delegate: DigitInputViewDelegate?
@@ -144,7 +187,7 @@ open class DigitInputView: UIView {
     fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
     
     fileprivate var underlineHeight: CGFloat = 4
-    fileprivate var spacing: CGFloat = 8
+    public var spacing: CGFloat = 8
     
     override open var canBecomeFirstResponder: Bool {
         
@@ -213,7 +256,9 @@ open class DigitInputView: UIView {
             let x = extraSpace / 2 + (characterWidth + spacing) * CGFloat(index)
             label.frame = CGRect(x: x, y: y, width: characterWidth, height: characterHeight)
             
-            underlines[index].frame = CGRect(x: x, y: frame.height - underlineHeight, width: characterWidth, height: underlineHeight)
+            if !self.showsDigitBorder {
+                underlines[index].frame = CGRect(x: x, y: frame.height - underlineHeight, width: characterWidth, height: underlineHeight)
+            }
             
             if let font = font {
                 label.font = font.withSize(fontSize)
@@ -256,23 +301,20 @@ open class DigitInputView: UIView {
             if #available(iOS 12.0, *) {
                 textField?.textContentType = .oneTimeCode
             }
-        }
-        else{
+        } else {
             textField?.textContentType = nil
         }
         
         // Since this function isn't called frequently, we just remove everything
         // and recreate them. Don't need to optimize it.
         
-        for label in labels {
-            label.removeFromSuperview()
-        }
+        labels.forEach({$0.removeFromSuperview()})
         labels.removeAll()
         
-        for underline in underlines {
-            underline.removeFromSuperview()
+        if !self.showsDigitBorder {
+            underlines.forEach({$0.removeFromSuperview()})
+            underlines.removeAll()
         }
-        underlines.removeAll()
         
         for i in 0..<numberOfDigits {
             let label = UILabel()
@@ -280,13 +322,24 @@ open class DigitInputView: UIView {
             label.isUserInteractionEnabled = false
             label.textColor = textColor
             
-            let underline = UIView()
-            underline.backgroundColor = i == 0 ? nextDigitBottomBorderColor : bottomBorderColor
+            if self.showsDigitBorder {
+                label.layer.borderWidth = 2.0
+                label.layer.cornerRadius = 10.0
+                
+                if #available(iOS 13.0, *) {
+                    label.layer.cornerCurve = .continuous
+                }
+                
+                label.layer.borderColor = i == 0 ? nextDigitBorderColor.cgColor : digitBorderColor.cgColor
+            } else {
+                let underline = UIView()
+                underline.backgroundColor = i == 0 ? nextDigitBottomBorderColor : bottomBorderColor
+                addSubview(underline)
+                underlines.append(underline)
+            }
             
             addSubview(label)
-            addSubview(underline)
             labels.append(label)
-            underlines.append(underline)
         }
         
     }
@@ -319,14 +372,21 @@ open class DigitInputView: UIView {
         }
         
         // set all the bottom borders color to default
-        for underline in underlines {
-            underline.backgroundColor = bottomBorderColor
+        
+        if self.showsDigitBorder {
+            labels.forEach({$0.layer.borderColor = self.digitBorderColor.cgColor})
+        } else {
+            underlines.forEach({$0.backgroundColor = bottomBorderColor})
         }
         
         let nextIndex = text.count + 1
         if labels.count > 0, nextIndex < labels.count + 1 {
             // set the next digit bottom border color
-            underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
+            if self.showsDigitBorder {
+                labels[nextIndex - 1].layer.borderColor = nextDigitBorderColor.cgColor
+            } else {
+                underlines[nextIndex - 1].backgroundColor = nextDigitBottomBorderColor
+            }
         }
         else {
             delegate?.digitsDidFinish(digitInputView: self)
@@ -349,7 +409,7 @@ open class DigitInputView: UIView {
             label.frame.origin.y = frame.height
             label.text = newText
             
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: { 
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
                 label.frame.origin.y = self.frame.height - label.frame.height
             }, completion: nil)
         }
